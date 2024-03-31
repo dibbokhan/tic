@@ -64,10 +64,10 @@ const cheakWinner = () => {
             boxs.forEach((box) => {
                 box.disabled = false;
             });
+        }else if(clickCount === maxClick) {
+            draw();
+            return;
         }
-            if(clickCount === maxClick) {
-                draw();
-            }
      
     }
      
