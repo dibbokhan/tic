@@ -11,8 +11,9 @@ let turnO = true;
 let clickCount = 0;
 let maxClick = 9;
     
-
-
+let drawMsg =() => { 
+    alert("its a draw");
+}
 
 const winPattn = [
     [0, 1, 2],
@@ -49,19 +50,25 @@ const cheakWinner = () => {
             let pos2Val = boxs[pattern[1]].innerText;
             let pos3Val = boxs[pattern[2]].innerText;
            
+            let draw = () => {
+                if(pos1Val != pos2Val && pos2Val === pos3Val){
+                    alert("draw");
+                    reset.disabled = false;
+                }
+            }
 
-        if(pos1Val != "" && pos2Val != "" && pos3Val  != "")
-        if(pos1Val === pos2Val && pos2Val === pos3Val){
+            if(pos1Val != "" && pos2Val != "" && pos3Val  != "")
+            if(pos1Val === pos2Val && pos2Val === pos3Val){
             alert("Winner is " + pos1Val);
             reset.disabled = false;
             boxs.forEach((box) => {
                 box.disabled = false;
             });
         }
-
+            if(clickCount === maxClick) {
+                draw();
+            }
+     
     }
-    if(clickCount === maxClick){
-        alert("Draw");
-    }  
-
+     
 }
