@@ -8,7 +8,8 @@ let turnO = true;
 
 
 
-
+let clickCount = 0;
+let maxClick = 9;
     
 
 
@@ -27,6 +28,8 @@ const winPattn = [
 boxs.forEach((box) => {
     box.addEventListener("click", () => {
         console.log("box was clicked");
+        clickCount++;
+        console.log(clickCount);
         if(turnO === true){
             box.innerText = "O"
             turnO = false;
@@ -55,5 +58,10 @@ const cheakWinner = () => {
                 box.disabled = false;
             });
         }
+
     }
+    if(clickCount === maxClick){
+        alert("Draw");
+    }  
+
 }
