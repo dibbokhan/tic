@@ -51,7 +51,7 @@ const cheakWinner = () => {
             let pos3Val = boxs[pattern[2]].innerText;
            
             let draw = () => {
-                if(pos1Val != pos2Val && pos2Val === pos3Val){
+                if(pos1Val != pos2Val){
                     alert("draw");
                     reset.disabled = false;
                 }
